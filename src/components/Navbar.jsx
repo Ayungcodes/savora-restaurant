@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div className="text-4xl lg:text-5xl font-[fredoka] opacity-85 text-[#374B42]"><a href="#" className="cursor-pointer duration-300 hover:opacity-100">savora.</a></div>
+          <div className="text-4xl lg:text-5xl font-semibold font-[fredoka] opacity-85 text-[#374B42]"><a href="#" className="cursor-pointer duration-300 hover:opacity-100">savora.</a></div>
 
           {/* desktop nav item 2 */}
           <div className="lg:flex hidden flex-wrap h-full space-x-12 items-center justify-center">
@@ -91,7 +91,7 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`absolute top-[60px] left-0 w-full overflow-hidden bg-[#374B42] text-xl text-green-100 z-40 transition-all duration-500 ease-in-out mt-1 ${
+        className={`absolute top-[60px] left-0 w-full overflow-hidden bg-[#374B42] text-xl text-green-100 z-999 transition-all duration-500 ease-in-out mt-1 ${
           navOpen ? "max-h-[12vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

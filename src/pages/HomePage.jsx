@@ -1,9 +1,11 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { useState } from "react";
 import chickenSoup from "../assets/chicken soup-min.jpg";
 import ratatouille from "../assets/ratatouille-eggplant-potato-meat-tomato-top-view-min.jpg";
 import sushi from "../assets/various-sushi-rolls-plate-min.jpg";
 import pasta from "../assets/pasta carbonara-min.jpg";
+import chefImg from "../assets/head-cook-throwing-fresh-chopped-herbs-pan-improve-taste-meal-while-professional-kitchen-master-chef-seasoning-dish-prepared-food-contest-held-fine-dining-restaurant-min.jpg";
 
 const HomePage = ({ photos }) => {
   const [imageIndex, setImageIndex] = useState(0);
@@ -206,7 +208,7 @@ const HomePage = ({ photos }) => {
                 />
               </div>
               <div className="mt-4 flex flex-col space-y-2 text-left">
-                <h1 className="text-2xl font-bold text-gray-800">
+                <h1 className="text-2xl font-bold text-[#374B42]">
                   {titles[index]}
                 </h1>
                 <p className="text-gray-800 text-[16px]">{descs[index]}</p>
@@ -221,6 +223,90 @@ const HomePage = ({ photos }) => {
           );
         })}
       </section>
+
+      {/* about section */}
+      <section className="w-full py-8 flex flex-col md:justify-center md:flex-row md:items-center space-y-11 bg-[#8E9E8B] text-[#374B42]">
+        <div className="mx-6 mt-8 md:w-[42vw] lg:w-[35vw] h-[65vh] lg:h-[55vh]">
+          <img
+            src={chefImg}
+            alt="head chef"
+            className="w-full h-full object-cover rounded-sm"
+          />
+        </div>
+        <div className="mx-6 space-y-5 md:w-[50vw]">
+          <h1 className="text-3xl md:text-4xl font-semibold">
+            Inspired by Nature, Perfected by Craft
+          </h1>
+          <p className="text-[18px] md:text-[20px]">
+            Savora celebrates the art of fine dining — blending timeless recipes
+            with a touch of modern elegance. Every dish is a tribute to flavor,
+            crafted from the finest ingredients and elevated through creativity
+            and care. We believe that food should not only satisfy hunger but
+            awaken the senses, spark connection, and tell a story worth
+            savoring.
+          </p>
+          <p className="text-[18px]">
+            Our inspiration comes from both heritage and innovation. We draw
+            from classic culinary traditions while reimagining them through a
+            contemporary lens — creating plates that feel familiar yet
+            excitingly new. Each element, from presentation to taste, is
+            designed to evoke warmth, comfort, and sophistication in every bite.
+          </p>
+          <p className="text-[18px]">
+            At Savora, dining is more than a meal — it’s an experience. A moment
+            to slow down, to indulge, and to share joy around the table. Whether
+            it’s your first visit or your fiftieth, our promise is the same: to
+            deliver a taste of timeless beauty, served with grace and soul.
+          </p>
+        </div>
+      </section>
+
+      <section className="w-full py-24 bg-[#f1f3f1] flex flex-col items-center text-center space-y-6">
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#374B42]">
+          Reserve Your Table
+        </h2>
+        <p className="text-gray-700 text-lg max-w-xl mx-6">
+          Because every moment deserves to be savored. Book your seat and let us
+          craft a fine dining experience tailored just for you.
+        </p>
+
+        <form className="w-full max-w-md flex flex-col space-y-4 text-left">
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="border border-gray-300 bg-transparent px-4 py-3 text-gray-700 focus:outline-none focus:border-[#374B42] transition-all duration-300"
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="border border-gray-300 bg-transparent px-4 py-3 text-gray-700 focus:outline-none focus:border-[#374B42] transition-all duration-300"
+          />
+          <div className="flex space-x-3">
+            <input
+              type="date"
+              className="w-1/2 border border-gray-300 bg-transparent px-4 py-3 text-gray-700 focus:outline-none focus:border-[#374B42] transition-all duration-300"
+            />
+            <input
+              type="time"
+              className="w-1/2 border border-gray-300 bg-transparent px-4 py-3 text-gray-700 focus:outline-none focus:border-[#374B42] transition-all duration-300"
+            />
+          </div>
+          <input
+            type="number"
+            placeholder="Guests"
+            className="border border-gray-300 bg-transparent px-4 py-3 text-gray-700 focus:outline-none focus:border-[#374B42] transition-all duration-300"
+          />
+
+          <button
+            type="submit"
+            className="mt-4 w-full bg-transparent text-[#374b42] border-[1px] py-3 text-lg font-medium tracking-wide transition-all duration-300 cursor-pointer hover:scale-98 hover:text-white hover:bg-[#374B42]"
+          >
+            Book Reservation
+          </button>
+        </form>
+      </section>
+
+      <Footer />
     </>
   );
 };
