@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+body {
+    background-color: #E8F0EB;
+    overflow-x: hidden;
+    font-family: "Alegreya Sans", sans-serif;
+}
