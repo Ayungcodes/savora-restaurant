@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full py-3 border-b bg-[#E8F0EB] z-50">
-        <div className="flex justify-between items-center mx-4">
+        <div className="flex justify-between items-center mx-5">
           {/* desktop nav item 1 */}
           <div className="lg:flex hidden flex-wrap h-full space-x-12 items-center justify-center">
             <a
@@ -91,11 +91,11 @@ const Navbar = () => {
       </nav>
 
       <div
-        className={`absolute top-[60px] left-0 w-full overflow-hidden bg-[#374B42] text-xl text-green-100 z-999 transition-all duration-500 ease-in-out mt-1 ${
+        className={`fixed top-[60px] left-0 w-full overflow-hidden bg-[#374B42] text-xl text-green-100 z-999 transition-all duration-500 ease-in-out mt-1 ${
           navOpen ? "max-h-[12vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-wrap h-full space-x-5 items-center justify-center p-2">
+        <div className="flex flex-wrap h-full space-x-5 items-center justify-center px-2 py-5">
           <a
             href="#"
             className="cursor-pointer transition-all hover:scale-110 hover:opacity-75"

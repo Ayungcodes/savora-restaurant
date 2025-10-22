@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="flex flex-col mt-10 border-t border-gray-500 pt-6 text-center text-[14px] text-gray-300">
           <div>© {new Date().getFullYear()} Savora. All rights reserved.</div>
-          <div>Built by <a href="bapyat-dev.vercel.app" target="_blank" className="duration-300 hover:text-gray-400">Gaius Emmanuel</a></div>
+          <div>Built by — <a href="bapyat-dev.vercel.app" target="_blank" className="duration-300 hover:text-gray-400 text-[16px]">Gaius Emmanuel</a></div>
         </div>
       </footer>
     </>
