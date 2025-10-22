@@ -26,46 +26,55 @@ const HomePage = ({ photos }) => {
         {/* hero section */}
         <section className="mt-16 relative h-full w-full">
           <div className="h-[80vh] w-full">
-            <img
-              src={photos[imageIndex].urls.regular}
-              alt={photos[0].alt_description || "Savora hero"}
-              className="opacity-80 w-full h-full object-cover"
-            />
-            <div className="absolute top-1/2 right-4 transform -translate-y-1/2 flex space-x-3 z-20">
-              <button
-                onClick={() => {
-                  setImageIndex(imageIndex > 0 ? imageIndex - 1 : 0);
-                }}
-                className="bg-black/30 hover:bg-black/50 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-              >
-                <i className="fa-solid fa-chevron-left text-2xl"></i>
-              </button>
+            {photos.length > 0 ? (
+              <>
+                <img
+                  src={photos[imageIndex].urls.regular}
+                  alt={photos[imageIndex].alt_description || "Savora hero"}
+                  className="opacity-80 w-full h-full object-cover"
+                />
 
-              <button
-                onClick={() => {
-                  setImageIndex(
-                    imageIndex < photos.length - 1 ? imageIndex + 1 : 0
-                  );
-                }}
-                className="bg-black/30 hover:bg-black/50 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
-              >
-                <i className="fa-solid fa-chevron-right text-2xl"></i>
-              </button>
-            </div>
+                <div className="absolute top-1/2 right-4 transform -translate-y-1/2 flex space-x-3 z-20">
+                  <button
+                    onClick={() =>
+                      setImageIndex(imageIndex > 0 ? imageIndex - 1 : 0)
+                    }
+                    className="bg-black/30 hover:bg-black/50 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                  >
+                    <i className="fa-solid fa-chevron-left text-2xl"></i>
+                  </button>
 
-            <div className="absolute inset-0 bg-black/50"></div>
-            <div className="absolute inset-0 flex flex-col justify-end items-start text-white text-lg font-semibold ml-6 py-10 space-y-7">
-              <h1 className="text-4xl lg:text-5xl">
-                Fresh flavors. Honest ingredients. Savora.
-              </h1>
-              <button
-                onClick={scrollToBookings}
-                className="border-[2px] border-white py-2 px-6 transition-all duration-300 hover:bg-white hover:text-[#374B42] cursor-pointer hover:scale-105"
-              >
-                Book a table{" "}
-                <i className="fa-solid fa-arrow-right text-[16px]"></i>
-              </button>
-            </div>
+                  <button
+                    onClick={() =>
+                      setImageIndex(
+                        imageIndex < photos.length - 1 ? imageIndex + 1 : 0
+                      )
+                    }
+                    className="bg-black/30 hover:bg-black/50 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+                  >
+                    <i className="fa-solid fa-chevron-right text-2xl"></i>
+                  </button>
+                </div>
+
+                <div className="absolute inset-0 bg-black/50"></div>
+                <div className="absolute inset-0 flex flex-col justify-end items-start text-white text-lg font-semibold ml-6 py-10 space-y-7">
+                  <h1 className="text-4xl lg:text-5xl">
+                    Fresh flavors. Honest ingredients. Savora.
+                  </h1>
+                  <button
+                    onClick={scrollToBookings}
+                    className="border-[2px] border-white py-2 px-6 transition-all duration-300 hover:bg-white hover:text-[#374B42] cursor-pointer hover:scale-105"
+                  >
+                    Book a table{" "}
+                    <i className="fa-solid fa-arrow-right text-[16px]"></i>
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="flex justify-center items-center h-full text-white">
+                <p>Loading images...</p>
+              </div>
+            )}
           </div>
         </section>
 
