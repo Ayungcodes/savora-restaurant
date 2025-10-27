@@ -57,7 +57,7 @@ const HomePage = ({ photos }) => {
                 </div>
 
                 <div className="absolute inset-0 bg-black/50"></div>
-                <div className="absolute inset-0 flex flex-col justify-end items-start text-white text-lg font-semibold ml-6 py-10 space-y-7">
+                <div className="absolute inset-0 flex flex-col justify-end items-start text-white text-lg font-semibold ml-4 md:ml-7 py-10 space-y-7">
                   <h1 className="text-4xl lg:text-5xl">
                     Fresh flavors. Honest ingredients. Savora.
                   </h1>
@@ -79,8 +79,8 @@ const HomePage = ({ photos }) => {
         </section>
 
         {/* Newsletter */}
-        <section className="mt-6 w-full h-[10vh] relative">
-          <div className="flex justify-between items-center mx-6">
+        <section className="mt-6 w-full h-[9vh] md:h-[6vh] lg:h-[10vh] relative">
+          <div className="flex justify-between items-center mx-4 md:mx-7">
             <div className="text-lg leading-5">
               Sign up for reservation updates & news from Savora.
             </div>
@@ -145,7 +145,7 @@ const HomePage = ({ photos }) => {
           {/* Overlay popup */}
           <div
             className={`fixed bottom-0 left-0 w-full bg-white/95 z-50 overflow-hidden transition-all duration-500 ease-in-out ${
-              openSubscribe ? "h-[58vh] opacity-100" : "h-0 opacity-0"
+              openSubscribe ? "h-[62vh] md:h-[38vh] opacity-100" : "h-0 opacity-0"
             }`}
           >
             <div className="h-full flex flex-col mt-8 mx-6 space-y-7">
@@ -184,7 +184,7 @@ const HomePage = ({ photos }) => {
                     time.
                   </div>
                   <button
-                    className="bg-[#374B42] w-[19vw] py-2 px-5 text-gray-50 text-[17px] cursor-pointer transition-all hover:scale-105"
+                    className="bg-[#374B42] w-[30vw] py-2 px-5 text-gray-50 text-[17px] cursor-pointer transition-all hover:scale-105"
                     onClick={() => setOpenSubscribe(!openSubscribe)}
                   >
                     Subscribe
@@ -243,14 +243,14 @@ const HomePage = ({ photos }) => {
 
         {/* about section */}
         <section className="w-full py-16 flex flex-col md:justify-center md:flex-row md:items-center space-y-11 bg-[#8E9E8B] text-[#374B42] shadow-2xl">
-          <div className="mx-6 mt-8 md:w-[42vw] lg:w-[32vw] h-[65vh] lg:h-[70vh] shadow-2xl">
+          <div className="mx-4 mt-8 md:w-[42vw] lg:w-[32vw] h-[65vh] lg:h-[70vh] shadow-2xl">
             <img
               src={chefImg}
               alt="head chef"
               className="w-full h-full object-cover rounded-sm"
             />
           </div>
-          <div className="mx-6 space-y-5 md:w-[50vw]">
+          <div className="mx-4 space-y-5 md:w-[50vw]">
             <h1 className="text-3xl md:text-4xl font-semibold">
               Inspired by Nature, Perfected by Craft
             </h1>
@@ -293,7 +293,7 @@ const HomePage = ({ photos }) => {
             us craft a fine dining experience tailored just for you.
           </p>
 
-          <form className="w-full max-w-md flex flex-col space-y-4 text-left">
+          <form className="w-[90vw] max-w-md flex flex-col space-y-4 text-left">
             <input
               type="text"
               placeholder="Full Name"
