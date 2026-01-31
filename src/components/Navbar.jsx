@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full py-3 border-b bg-[#E8F0EB] z-50">
-        <div className="flex justify-between items-center mx-5">
+        <div className="flex justify-between items-center mx-3 md:mx-6">
           {/* desktop nav item 1 */}
           <div className="lg:flex hidden flex-wrap h-full space-x-12 items-center justify-center">
             <a

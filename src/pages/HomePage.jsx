@@ -119,7 +119,7 @@ const HomePage = ({ photos }) => {
                 />
                 <h1 className="text-lg tracking-tight">MARKETING PERMISSION</h1>
               </div>
-              
+
               <button className="lg:block hidden bg-[#374B42] py-2 px-5 text-gray-50 text-[17px] cursor-pointer transition-all hover:scale-105">
                 Subscribe
               </button>
@@ -137,6 +137,7 @@ const HomePage = ({ photos }) => {
 
             <div>
               <button
+                type="button"
                 className="lg:hidden bg-[#374B42] py-2 px-5 text-gray-50 text-[17px] cursor-pointer duration-300 transition-all hover:-translate-y-0.5"
                 onClick={() => setOpenSubscribe(!openSubscribe)}
               >
@@ -149,16 +150,16 @@ const HomePage = ({ photos }) => {
           <div
             className={`fixed bottom-0 left-0 w-full bg-white/95 z-50 overflow-hidden transition-all duration-500 ease-in-out ${
               openSubscribe
-                ? "h-[62vh] md:h-[52vh] opacity-100"
+                ? "h-[70vh] md:h-[52vh] opacity-100"
                 : "h-0 opacity-0"
             }`}
           >
-            <div className="h-full flex flex-col mt-8 mx-6 space-y-7">
-              <div className="w-[50vw] text-xl">
+            <div className="h-full flex flex-col mt-8 mx-4 space-y-7">
+              <div className="w-[85vw] text-xl">
                 Sign up for reservation updates and news from savora.
               </div>
               <form action="submit">
-                <div className="flex flex-col space-y-5">
+                <div className="flex flex-col space-y-7">
                   <input
                     type="email"
                     name="email"
@@ -178,7 +179,7 @@ const HomePage = ({ photos }) => {
                       type="checkbox"
                       name="marketing permission"
                       id="marketing permission"
-                      className="w-7 h-7 accent-green-600"
+                      className="w-6 h-6 accent-green-600"
                     />
                     <h1 className="text-lg">MARKETING PERMISSION</h1>
                   </div>
@@ -189,7 +190,8 @@ const HomePage = ({ photos }) => {
                     time.
                   </div>
                   <button
-                    className="bg-[#374B42] w-[30vw] py-2 px-5 text-gray-50 text-[17px] cursor-pointer transition-all hover:scale-105"
+                    className="bg-[#374B42] w-[30vw] py-2 px-5 text-gray-50 text-[17px] cursor-pointer duration-300 transition-all hover:-translate-y-1"
+                    type="button"
                     onClick={() => setOpenSubscribe(!openSubscribe)}
                   >
                     Subscribe
