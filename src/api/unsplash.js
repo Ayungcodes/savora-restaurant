@@ -1,10 +1,12 @@
 import axios from "axios";
 
-const UNSPLASH_ACCESS_KEY = "EmcI8h3vUaTxVKMf9_T_QRDnp_cBpCrtmMPJafC2wRI";
+const unsplashAccessKey = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
+
+const baseURL = import.meta.env.VITE_BASE_URL;
 
 export const unsplash = axios.create({
-  baseURL: "https://api.unsplash.com/",
+  baseURL: baseURL,
   headers: {
-    Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}`,
+    Authorization: `Client-ID ${unsplashAccessKey}`,
   },
 });

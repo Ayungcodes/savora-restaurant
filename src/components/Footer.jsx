@@ -51,7 +51,7 @@ const Footer = () => {
                 placeholder="Your email"
                 className="bg-transparent border border-gray-400 px-3 py-2 text-gray-100 focus:outline-none w-48"
               />
-              <button className="bg-white text-[#374B42] px-4 py-2 font-medium transition-all hover:scale-105 cursor-pointer">
+              <button className="bg-white text-[#374B42] px-4 py-2 font-medium duration-300 transition-all hover:scale-95 cursor-pointer">
                 Subscribe
               </button>
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="flex flex-col mt-10 border-t border-gray-500 pt-6 text-center text-[14px] text-gray-300">
           <div>© {new Date().getFullYear()} Savora. All rights reserved.</div>
-          <div>Built by — <a href="bapyat-dev.vercel.app" target="_blank" className="duration-300 hover:text-gray-400 text-[16px]">Gaius Emmanuel</a></div>
+          <div>Built by — <a href="https://bapyat-dev.vercel.app/" target="_blank" className="duration-300 hover:text-gray-400 text-[16px]">Gaius Emmanuel</a></div>
         </div>
       </footer>
     </>

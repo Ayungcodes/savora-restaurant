@@ -31,7 +31,7 @@ const HomePage = ({ photos }) => {
                 <img
                   src={photos[imageIndex].urls.regular}
                   alt={photos[imageIndex].alt_description || "Savora hero"}
-                  className="opacity-80 w-full h-full object-cover"
+                  className="opacity-85 w-full h-full object-cover"
                 />
 
                 <div className="absolute top-1/2 right-4 transform -translate-y-1/2 flex space-x-3 z-20">
@@ -47,7 +47,7 @@ const HomePage = ({ photos }) => {
                   <button
                     onClick={() =>
                       setImageIndex(
-                        imageIndex < photos.length - 1 ? imageIndex + 1 : 0
+                        imageIndex < photos.length - 1 ? imageIndex + 1 : 0,
                       )
                     }
                     className="bg-black/30 hover:bg-black/50 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:scale-110"
@@ -58,15 +58,15 @@ const HomePage = ({ photos }) => {
 
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 flex flex-col justify-end items-start text-white text-lg font-semibold ml-4 md:ml-7 py-10 space-y-7">
-                  <h1 className="text-4xl lg:text-5xl">
+                  <h1 className="text-3xl md:text-5xl lg:text-6xl">
                     Fresh flavors. Honest ingredients. Savora.
                   </h1>
                   <button
                     onClick={scrollToBookings}
-                    className="border-[2px] border-white py-2 px-6 transition-all duration-300 hover:bg-white hover:text-[#374B42] cursor-pointer hover:scale-105"
+                    className="group border-[2px] border-white py-2 px-6 transition-all duration-300 hover:bg-white hover:text-[#374B42] cursor-pointer hover:-translate-y-1"
                   >
                     Book a table{" "}
-                    <i className="fa-solid fa-arrow-right text-[16px]"></i>
+                    <i className="fa-solid fa-arrow-right text-[16px] group-hover:translate-x-1 transition-transform duration-300"></i>
                   </button>
                 </div>
               </>
@@ -79,12 +79,12 @@ const HomePage = ({ photos }) => {
         </section>
 
         {/* Newsletter */}
-        <section className="mt-6 w-full h-[9vh] md:h-[6vh] lg:h-[10vh] relative">
-          <div className="flex justify-between items-center mx-4 md:mx-7">
-            <div className="text-lg leading-5">
+        <section className="mt-6 w-full h-[9vh] md:h-[6vh] lg:h-[9vh] relative">
+          <div className="flex justify-between items-center mx-3 md:mx-6">
+            <div className="text-base md:text-xl leading-5 pr-8">
               Sign up for reservation updates & news from Savora.
             </div>
-
+            {/* for desktop */}
             <div className="lg:flex w-[70vw] hidden items-center space-x-6">
               <input
                 type="email"
@@ -93,6 +93,7 @@ const HomePage = ({ photos }) => {
                 placeholder="Email"
                 className="border-[1px] border-gray-500 outline-0 px-3 py-2 grow"
               />
+
               <input
                 type="text"
                 name="name"
@@ -100,6 +101,7 @@ const HomePage = ({ photos }) => {
                 placeholder="Name"
                 className="border-[1px] border-gray-500 outline-0 px-3 py-2 grow"
               />
+
               <div
                 onMouseEnter={() => {
                   setMouseEntering(true);
@@ -117,6 +119,7 @@ const HomePage = ({ photos }) => {
                 />
                 <h1 className="text-lg tracking-tight">MARKETING PERMISSION</h1>
               </div>
+              
               <button className="lg:block hidden bg-[#374B42] py-2 px-5 text-gray-50 text-[17px] cursor-pointer transition-all hover:scale-105">
                 Subscribe
               </button>
@@ -134,7 +137,7 @@ const HomePage = ({ photos }) => {
 
             <div>
               <button
-                className="lg:hidden bg-[#374B42] py-2 px-5 text-gray-50 text-[17px] cursor-pointer transition-all hover:scale-105"
+                className="lg:hidden bg-[#374B42] py-2 px-5 text-gray-50 text-[17px] cursor-pointer duration-300 transition-all hover:-translate-y-0.5"
                 onClick={() => setOpenSubscribe(!openSubscribe)}
               >
                 Subscribe
@@ -145,7 +148,9 @@ const HomePage = ({ photos }) => {
           {/* Overlay popup */}
           <div
             className={`fixed bottom-0 left-0 w-full bg-white/95 z-50 overflow-hidden transition-all duration-500 ease-in-out ${
-              openSubscribe ? "h-[62vh] md:h-[38vh] opacity-100" : "h-0 opacity-0"
+              openSubscribe
+                ? "h-[62vh] md:h-[52vh] opacity-100"
+                : "h-0 opacity-0"
             }`}
           >
             <div className="h-full flex flex-col mt-8 mx-6 space-y-7">
@@ -230,10 +235,10 @@ const HomePage = ({ photos }) => {
                   <p className="text-gray-800 text-[16px]">{descs[index]}</p>
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2 transition-transform duration-300 hover:scale-105 text-[17px]"
+                    className="group inline-flex items-center gap-1.5 text-[17px]"
                   >
                     ORDER NOW{" "}
-                    <i className="fa-solid fa-arrow-right text-sm"></i>
+                    <i className="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
                   </a>
                 </div>
               </div>
@@ -242,12 +247,12 @@ const HomePage = ({ photos }) => {
         </section>
 
         {/* about section */}
-        <section className="w-full py-16 flex flex-col md:justify-center md:flex-row md:items-center space-y-11 bg-[#8E9E8B] text-[#374B42] shadow-2xl">
-          <div className="mx-4 mt-8 md:w-[42vw] lg:w-[32vw] h-[65vh] lg:h-[70vh] shadow-2xl">
+        <section className="w-full py-20 flex flex-col md:justify-center md:flex-row md:items-center space-y-11 bg-[#8E9E8B] text-[#374B42] shadow-2xl">
+          <div className="mx-4 mt-8 md:w-[42vw] lg:w-[32vw] h-[65vh] lg:h-[70vh] shadow-sm rounded-4xl">
             <img
               src={chefImg}
               alt="head chef"
-              className="w-full h-full object-cover rounded-sm"
+              className="w-full h-full object-cover rounded-4xl"
             />
           </div>
           <div className="mx-4 space-y-5 md:w-[50vw]">
@@ -283,7 +288,7 @@ const HomePage = ({ photos }) => {
         {/* reservation section */}
         <section
           ref={bookingRef}
-          className="w-full py-24 bg-[#f1f3f1] flex flex-col items-center text-center space-y-6"
+          className="w-full py-24 bg-[#f1f3f1] flex flex-col items-center text-center space-y-5"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-[#374B42]">
             Reserve Your Table
